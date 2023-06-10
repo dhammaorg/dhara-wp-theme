@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <title>Virtual Group Sitting - Dhara Dhamma</title>
@@ -28,7 +29,6 @@
       document.getElementById("audio-nine").style.display = "none";
       document.getElementById("audio-ten").style.display = "none";
       document.getElementById("audio-eleven").style.display = "none";
-      document.getElementById("audio-twelve").style.display = "none";
       document.getElementById("audio-one").pause();
       document.getElementById("audio-two").pause();
       document.getElementById("audio-three").pause();
@@ -40,7 +40,6 @@
       document.getElementById("audio-nine").pause();
       document.getElementById("audio-ten").pause();
       document.getElementById("audio-eleven").pause();
-      document.getElementById("audio-twelve").pause();
 
       switch (playerIndex) {
          case 0:
@@ -75,9 +74,6 @@
             break;
          case 10:
             document.getElementById("audio-eleven").style.display = "block";
-            break;
-         case 11:
-            document.getElementById("audio-twelve").style.display = "block";
             break;
       }
    }
@@ -119,6 +115,26 @@
       document.getElementById( "vgs-body").style.backgroundImage = "url('/filebase/virtual-group-sittings/backgrounds/" + imageFileName + "')";
    }
 
+   function changeTextTo(textIndex) {
+      switch (textIndex) {
+         case 0:
+            document.getElementById("vgs-welcome").style.display = "block";
+            document.getElementById("vgs-in-progress-instructions").style.display = "none";
+            document.getElementById("vgs-in-progress-silent").style.display = "none";
+            break;
+         case 1:
+            document.getElementById("vgs-welcome").style.display = "none";
+            document.getElementById("vgs-in-progress-instructions").style.display = "block";
+            document.getElementById("vgs-in-progress-silent").style.display = "none";
+            break;
+         case 2:
+            document.getElementById("vgs-welcome").style.display = "none";
+            document.getElementById("vgs-in-progress-instructions").style.display = "none";
+            document.getElementById("vgs-in-progress-silent").style.display = "block";
+            break;
+      }
+   }
+   
    window.onload = function() {
       document.getElementById("session-chooser").onchange = function() {
          changeAudioPlayerTo( this.selectedIndex );
@@ -126,15 +142,23 @@
       document.getElementById("background-chooser").onchange = function() {
          changeBackgroundTo( this.selectedIndex );
       }
+      document.getElementById("text-chooser").onchange = function() {
+         changeTextTo( this.selectedIndex );
+      }
    }
 </script>
 <?php wp_head(); ?>
 </head>
 <body id="vgs-body">
 <div id="intro-text">
-   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <?php the_content(__('(more...)')); ?>
-   <?php endwhile; endif; ?>
+   <?php 
+    if (have_posts()) {   
+        while (have_posts()) { 
+            the_post();
+            the_content(__('(more...)'));
+        }
+    } 
+    ?>
 </div>
 <div id="audio-controls">
    <div id="audio-sliders">
@@ -163,20 +187,17 @@
          <source src="/filebase/virtual-group-sittings/salila-short.mp3" type="audio/mpeg">
       </audio>
       <audio controls id="audio-nine" class="audio">
-         <source src="/filebase/virtual-group-sittings/giri-long.mp3" type="audio/mpeg">
-      </audio>
-      <audio controls id="audio-ten" class="audio">
-         <source src="/filebase/virtual-group-sittings/via-long-hindi-eng.mp3" type="audio/mpeg">
-      </audio>
-      <audio controls id="audio-eleven" class="audio">
          <source src="/filebase/virtual-group-sittings/day-ten-short.mp3" type="audio/mpeg">
       </audio>
-      <audio controls id="audio-twelve" class="audio">
-         <source src="/filebase/virtual-group-sittings/kaya-short.mp3" type="audio/mpeg">
+      <audio controls id="audio-ten" class="audio">
+         <source src="/filebase/virtual-group-sittings/khetta-short-french.mp3" type="audio/mpeg">
+      </audio>
+      <audio controls id="audio-eleven" class="audio">
+         <source src="/filebase/virtual-group-sittings/khetta-minimal-french.mp3" type="audio/mpeg">
       </audio>
    </div>
    <div id="control-choosers">
-      <label for="session-chooser">Audio Session:</label>
+      <!--label for="session-chooser">Audio Session:</label-->
       <select id="session-chooser">
          <option>1 - Khetta Short</option>
          <option>2 - Sikhara Short</option>
@@ -186,12 +207,11 @@
          <option>6 - Juhu Mumbai Short</option>
          <option>7 - Salila Long</option>
          <option>8 - Salila Short</option>
-         <option>9 - Giri Long</option>
-         <option>10 - VIA Long [Hindi/Eng]</option>
-         <option>11 - Day Ten Short</option>
-         <option>12 - Kaya</option>
+         <option>9 - Day Ten Short</option>
+         <option>10 - Khetta Short [Fr/Eng]</option>
+         <option>11 - Khetta Minimal [Fr/Eng]</option>
       </select>
-      <label for="background-chooser">Background:</label>
+      <!--label for="background-chooser">Background:</label-->
       <select id="background-chooser">
          <option>1 - Dharā Arial</option>
          <option>2 - Dharā Tree</option>
@@ -203,6 +223,11 @@
          <option>8 - Pubannanda Night</option>
          <option>9 - Pakasa Pond</option>
          <option>10 - Pakasa Gong</option>
+      </select>
+      <select id="text-chooser">
+         <option>1 - Intro Text</option>
+         <option>2 - Instructions</option>
+         <option>3 - Silent</option>
       </select>
       <button id="toggle-text-button" type="button" onclick="toggleTextHide()">Hide Text</button> 
    </div>

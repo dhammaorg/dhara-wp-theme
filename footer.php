@@ -13,17 +13,17 @@
                      <td>
                         <a id="page-footer-schedule-link" target="_blank" href="<?php echo get_theme_mod( 'dhamma_schedule_link'); ?>">
                            <h2>View Schedule and Apply</h2>
-                           <img id="footer-schedule" src="/wp-content/themes/dhara/images/footer-schedule6.png" />
+                           <img id="footer-schedule" alt="Schedule" src="/wp-content/themes/dhara/images/footer-schedule6.png">
                         </a>
                      </td>
                      <td>
                         <h2><a href='/contact/'>Contact Us</a></h2>
-                        Phone: <a href="tel:413-625-2160">+1 (413) 625-2160</a><br />
-                        Fax: <a href="fax:413-625-2170">+1 (413) 625-2170</a><br />
-                        Email: <a href="mailto:info@dhara.dhamma.org">info@dhara.dhamma.org</a><br />
-                        <br />
+                        Phone: <a href="tel:413-625-2160">+1 (413) 625-2160</a><br>
+                        Fax: <a href="fax:413-625-2170">+1 (413) 625-2170</a><br>
+                        Email: <a href="mailto:info@dhara.dhamma.org">info@dhara.dhamma.org</a><br>
+                        <br>
                         <h2><a href="/getting-here/">Directions</a></h2>
-                        <a href="https://www.google.com/maps/place/Dhamma+Dhara+Vipassana+Meditation+Center/@42.2569029,-74.4892451,6z/data=!4m5!3m4!1s0x89e127b5d0ca94c5:0x7bc3c063d13784b7!8m2!3d42.634991!4d-72.668703" target="_blank">386 Colrain Shelburne Road<br />
+                        <a href="https://www.google.com/maps/place/Dhamma+Dhara+Vipassana+Meditation+Center/@42.2569029,-74.4892451,6z/data=!4m5!3m4!1s0x89e127b5d0ca94c5:0x7bc3c063d13784b7!8m2!3d42.634991!4d-72.668703" target="_blank">386 Colrain Shelburne Road<br>
                         Shelburne, MA 01370-9672, USA</a>
                      </td>
                   </tr>
@@ -33,7 +33,7 @@
       </div>
       <div id="footer-copyright-and-sitemap">
          <div class="constrained-to-mid">
-            &copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?> | <a href="/sitemap/">Sitemap</a>
+            &copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?><!-- | <a href="/sitemap/">Sitemap</a>-->
          </div>
       </div>
    </footer>

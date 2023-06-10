@@ -1,7 +1,7 @@
 /*
  * Theme Name: Dhara
  * Theme URI: www.dhara.dhamma.org
- * Version: 4 
+ * Version: 4.1 
  * Author: Joshua Hartwell, Craig Miller, &amp; Jeremy Dunn
  * License: GPL v3.0
 
@@ -27,6 +27,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
 html,body { font-family: "Open Sans", Arial, Helvetica, Sans-Serif; text-align: left; font-size: 10px; }
 html { overflow-y: scroll } /*Makes the scrollbar always visible, helpful in avoiding unwanted behavior around edges of responsive designs*/
 .constrained-to-mid { width:90%; margin-left: auto; margin-right: auto; }
+.video { margin: auto; display: block; width: 640px; height: 360px; max-width: 90% }
 
 #search-login-bar-logged-in, #search-login-bar-logout-link 
    { display: inline-block; white-space: nowrap; font-size: 1.7em; font-weight: bold; margin-top: 14px; }
@@ -215,7 +216,7 @@ section.pagination-links { margin-top: 10px; margin-bottom: 10px; }
 #search-results-content #s {width: 85%}
 a.search-results:link { text-decoration: none }
 li.search-results{padding: 5px 5px; border-radius: 10px;}
-h3.search-results{text-decoration: underline}
+h3.search-results{display: inline-block; text-decoration: underline; margin-top: 0px}
 
 header.archive { margin: 15px 15px 10px 15px; }
 header.archive a:link { text-decoration: none }
