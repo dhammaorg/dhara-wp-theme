@@ -126,19 +126,26 @@ function my_login_logo() {
 add_action('login_enqueue_scripts', 'my_login_logo');
 
 // Local news feeds
-function local_news_feed($name, $categoryID) {
+
+add_shortcode('dhamma_news_feed', 'dhamma_news_feed');
+
+function dhamma_news_feed($atts) {
+    $retMe = "";
+    $name = ($atts["name"]);
+    $categoryID = ($atts["category"]);
     $recent_posts = wp_get_recent_posts(['category' => $categoryID, 'post_status' => 'publish']);
     if (!empty($recent_posts)) {
-        echo "<h2>$name News</h2>";
-        echo '<ul class="local-page-news-items">';
+        $retMe .= "<h2>$name News</h2>";
+        $retMe .= '<ul class="local-page-news-items">';
         foreach ($recent_posts as $recent) {
-            echo '<li class="home-page-news-item">';
-            echo '<a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a>';
-            echo '</li>';
+            $retMe .= '<li class="home-page-news-item">';
+            $retMe .= '<a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a>';
+            $retMe .= '</li>';
         }
-        echo '</ul>';
+        $retMe .= '</ul>';
     }
     wp_reset_query();
+    return $retMe;
 }
 
 //Useful functions for checking if we're on an os-page or we want the os-menu, for use in other places in theme
