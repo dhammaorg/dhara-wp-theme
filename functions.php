@@ -134,7 +134,8 @@ function dhamma_news_feed($atts) {
     $categoryID = ($atts["category"]);
     $recent_posts = wp_get_recent_posts(['category' => $categoryID, 'post_status' => 'publish']);
     if (!empty($recent_posts)) {
-        $name = $atts["name"] ?? ''; // JJD 8/18/23 #6 handle missing name 
+        // JJD 8/18/23 #6 handle missing "name" attr; some pages have "title" attr instead of "name"
+        $name = $atts["name"] ?? ($atts["title"] ?? ''); 
         $retMe .= "<h2>$name News</h2>";
         $retMe .= '<ul class="local-page-news-items">';
         foreach ($recent_posts as $recent) {
