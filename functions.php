@@ -131,10 +131,10 @@ add_shortcode('dhamma_news_feed', 'dhamma_news_feed');
 
 function dhamma_news_feed($atts) {
     $retMe = "";
-    $name = ($atts["name"]);
     $categoryID = ($atts["category"]);
     $recent_posts = wp_get_recent_posts(['category' => $categoryID, 'post_status' => 'publish']);
     if (!empty($recent_posts)) {
+        $name = $atts["name"] ?? ''; // JJD 8/18/23 #6 handle missing name 
         $retMe .= "<h2>$name News</h2>";
         $retMe .= '<ul class="local-page-news-items">';
         foreach ($recent_posts as $recent) {
@@ -157,7 +157,8 @@ function prefers_os_menu($wp) {
         $current_announcements_ID = 50;
         $old_announcements_ID = 49;
         $prefers_ns_categories = [$current_announcements_ID, $old_announcements_ID];
-        $cat_ID = get_queried_object()->term_id;
+        // JJD 8/18/23 #6 handle null object
+        $cat_ID = get_queried_object()->term_id ?? 'dummy';
         return !in_array($cat_ID, $prefers_ns_categories);
     } else if (is_single()) {
         return true;
