@@ -213,7 +213,7 @@
       </select>
       <!--label for="background-chooser">Background:</label-->
       <select id="background-chooser">
-         <option>1 - Dharā Arial</option>
+         <option>1 - Dharā Aerial</option>
          <option>2 - Dharā Tree</option>
          <option>3 - Dharā Gong</option>
          <option>4 - Patapa Lotus</option>
