@@ -171,9 +171,11 @@ function prefers_os_menu($wp) {
     return false;
 }
 
+/* Old students and webmasters should see only OS menu
+   todo: rename this function to is_os_user  */
 function is_os_page($wp) {
     $is_os_page = false;
-    if (is_user_logged_in() && prefers_os_menu($wp)) {
+    if (is_user_logged_in()) {
         $is_os_page = true;
     }
     return $is_os_page;
