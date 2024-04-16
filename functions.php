@@ -52,11 +52,7 @@ add_action('save_post', 'dhamma_meta_save');
 
 function is_dev() {
   $url = parse_url( get_site_url(), PHP_URL_HOST );
-  if ($url == "dhara.dhamma.org") {
-    return false;
-  } else {
-    return true;
-  }
+  returns str_contains( $url, ".dev." ); // is URL nyus.dev.webhost2.dhamma.org or dhara.dev.webhost2.dhamma.org ?
 }
 
 function is_restricted() {
