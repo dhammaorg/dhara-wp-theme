@@ -334,11 +334,13 @@ function dhara_sanitize_uri($uri) {
 }
 
 function show_404() {
+    $pageID = get_the_ID();
     ?>
-    <div id="page-<?php echo get_the_ID(); ?>-content" class="page-content">
+    <div id="page-<?php echo $pageID; ?>-content" class="page-content">
         <?php 
         if (is_restricted()) {
-            if (wp_get_current_user()->ID == 6) {
+            // JJD 4/17//24 remove hard-coded user ID; fix the logic to check page permissions
+            if ('workers'==($dhamma_perms = get_post_meta($pageID, "dhamma_perms", true))) {
                 ?>
                 <h1>This Page is for Dhamma Workers Only</h1>
                 <!--If we're logged in as old student and the content is still restricted-->
