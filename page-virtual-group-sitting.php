@@ -154,7 +154,9 @@
             <?php
             // JJD 4/17/24 #24 require dhammaworker login
             $user = wp_get_current_user();
-            if ('dhammaworker' !== (get_userdata($user->ID)->user_login)) {
+            $userData = get_userdata($user->ID); // returns false if user is not logged in
+            $login = (false == $userData ? 'newstudent' : $userData->user_login);
+            if ('dhammaworker' !== $login) {
                 show_404();
                 exit; // don't show remainder of page content
             }
