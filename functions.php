@@ -382,3 +382,12 @@ function show_404() {
     </div>
     <?php
 }
+
+add_action( 'template_redirect', 'redirect_non_logged_users_to_os' );
+
+function redirect_non_logged_users_to_os() {
+	if ( !is_user_logged_in() && is_category('all-news' )) {
+		wp_redirect( '/os/' ); 
+   		exit;
+   }
+}
