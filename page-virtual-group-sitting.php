@@ -168,6 +168,12 @@
             }
             ?>
         </div>
+
+	<div>
+		<h2>Group Sitting Audio Resources</h2>
+	<iframe src="https://discourses.dhamma.org/recordings/group_sittings?languages%5Biso_code%5D=en&embedded=true" SameSite=None ></iframe>
+	</div>
+
         <div id="audio-controls">
             <div id="audio-sliders">
                 <audio controls id="audio-one" class="audio">
