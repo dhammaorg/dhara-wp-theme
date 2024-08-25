@@ -12,13 +12,12 @@
                   <img alt="The Meditation Hall" src="/wp-content/uploads/your-practice-1.jpg" />
                   <h2>Your Practice</h2>
                   <ul class="old-student-home-list">
-                     <li><a href="/os/regions/group-sittings/">Find Local Group Sittings</a></li>
-                     <li><a href="https://www.dhamma.org/en/os/10-day/dsum.htm">Read the Discourse Summaries</a></li>
+                     <li><a href="/os/regions/group-sittings/">Local Group Sittings</a></li>
+                     <li><a href="/os/home/courses-types/">Old Student Courses</a></li>
+                     <li><a target="_blank" href="https://www.dhamma.org/en-US/schedules/schdhara">Course Schedule</a></li>
                      <li><a href="/os/home/guidelines-for-practicing/">Guidelines for Practicing</a></li>
-                     <li><a target="_blank" href="http://audio.server.dhamma.org/audio/gs/gs.htm">Download Group Sitting Recordings</a></li>
-                     <li><a href="/os/home/courses-types/">Read about Old Student Courses</a></li>
-                     <li><a href="/os/home/guidelines-for-practicing/">Read the Mettā Sutta</a></li>
-                     <li><a target="_blank" href="http://www.vridhamma.org/Question-and-Answers">More Answer by S.N. Goenka</a></li>
+                     <li><a href="/os/home/faqs-for-old-students/">FAQs for Old Students</a></li>
+                     <li><a href="/os/home/inspirational-videos/">Inspirational Videos</a></li>
                   </ul>
                </td>
                <td>
