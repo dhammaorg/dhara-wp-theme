@@ -173,22 +173,22 @@
 
             <div id="audio-sliders">
                 <audio controls id="audio-one" class="audio">
-                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/e621a02d-031a-4a66-a1ee-b48488d710c1.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/121a78a9-1f19-477f-b465-4ef10e754812.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-two" class="audio">
-                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/80682f18-af4e-4e3c-9274-cf2e31f827e0.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/dd619c48-7176-4b5a-8423-48b8ca0677ef.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-three" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/f172e558-fb5c-45d5-919c-9ecfbca7ec4e.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-four" class="audio">
-                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/343ea098-2eb0-4c35-98a7-f74f6add6a4f.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/6cb58916-5c4c-4834-aad5-7edd4099fd39.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-five" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/b6d63e17-850c-4530-bd44-10b7195e51d2.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-six" class="audio">
-                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/5432df67-d6c3-4c65-aa30-099f8226f043.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/8545248c-7b45-4d7a-9dde-edc5dea71d2c.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-seven" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/cf7d590f-75e5-4707-87f8-105c74225669.mp3" type="audio/mpeg">
