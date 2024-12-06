@@ -110,10 +110,10 @@
             case 7:
             imageFileName = "8.jpg";
             break;
-            case 8:
+            /*case 8:
             imageFileName = "9.jpg";
-            break;
-            case 9:
+            break;*/
+            case 8:
             imageFileName = "10.jpg";
             break;
             }
@@ -240,8 +240,8 @@
                     <option>6 - Patapa Dhamma Hall</option>
                     <option>7 - Pubannanda Day</option>
                     <option>8 - Pubannanda Night</option>
-                    <option>9 - Pakasa Pond</option>
-                    <option>10 - Pakasa Gong</option>
+                    <!--<option>9 - Pakasa Pond</option>-->
+                    <option>9 - Pakasa Gong</option>
                 </select>
                 <select id="text-chooser">
                     <option>1 - Intro Text</option>
