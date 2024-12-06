@@ -29,6 +29,7 @@
             document.getElementById("audio-nine").style.display = "none";
             document.getElementById("audio-ten").style.display = "none";
             document.getElementById("audio-eleven").style.display = "none";
+            document.getElementById("audio-twelve").style.display = "none";
             document.getElementById("audio-one").pause();
             document.getElementById("audio-two").pause();
             document.getElementById("audio-three").pause();
@@ -40,6 +41,7 @@
             document.getElementById("audio-nine").pause();
             document.getElementById("audio-ten").pause();
             document.getElementById("audio-eleven").pause();
+            document.getElementById("audio-twelve").pause();
 
             switch (playerIndex) {
             case 0:
@@ -75,6 +77,9 @@
             case 10:
             document.getElementById("audio-eleven").style.display = "block";
             break;
+            case 11:
+            document.getElementById("audio-twelve").style.display = "block";
+            break;
             }
             }
 
@@ -105,10 +110,10 @@
             case 7:
             imageFileName = "8.jpg";
             break;
-            case 8:
+            /*case 8:
             imageFileName = "9.jpg";
-            break;
-            case 9:
+            break;*/
+            case 8:
             imageFileName = "10.jpg";
             break;
             }
@@ -168,56 +173,62 @@
             }
             ?>
         </div>
+
         <div id="audio-controls">
+
             <div id="audio-sliders">
                 <audio controls id="audio-one" class="audio">
-                    <source src="/filebase/virtual-group-sittings/khetta-short.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/121a78a9-1f19-477f-b465-4ef10e754812.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-two" class="audio">
-                    <source src="/filebase/virtual-group-sittings/sikhara-short.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/dd619c48-7176-4b5a-8423-48b8ca0677ef.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-three" class="audio">
-                    <source src="/filebase/virtual-group-sittings/sikhara-long.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/f172e558-fb5c-45d5-919c-9ecfbca7ec4e.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-four" class="audio">
-                    <source src="/filebase/virtual-group-sittings/setu-long.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/6cb58916-5c4c-4834-aad5-7edd4099fd39.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-five" class="audio">
-                    <source src="/filebase/virtual-group-sittings/dubai-long.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/b6d63e17-850c-4530-bd44-10b7195e51d2.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-six" class="audio">
-                    <source src="/filebase/virtual-group-sittings/juhu-mumbai-short.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/8545248c-7b45-4d7a-9dde-edc5dea71d2c.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-seven" class="audio">
-                    <source src="/filebase/virtual-group-sittings/salila-long.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/cf7d590f-75e5-4707-87f8-105c74225669.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-eight" class="audio">
-                    <source src="/filebase/virtual-group-sittings/salila-short.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/12dfbc7c-d06d-42e5-87e0-94c7046076cb.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-nine" class="audio">
-                    <source src="/filebase/virtual-group-sittings/day-ten-short.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/6506bfcc-548b-4fca-a93b-968db754de9b.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-ten" class="audio">
-                    <source src="/filebase/virtual-group-sittings/khetta-short-french.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/f26d0a84-40da-4164-8a50-4cc81a63bd20.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-eleven" class="audio">
-                    <source src="/filebase/virtual-group-sittings/khetta-minimal-french.mp3" type="audio/mpeg">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/ace0da45-e219-4ae4-b979-8af98828eb50.mp3" type="audio/mpeg">
+                </audio>
+                <audio controls id="audio-twelve" class="audio">
+                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/f7fa61ac-41f1-4a43-9974-58262c7ce392.mp3" type="audio/mpeg">
                 </audio>
             </div>
             <div id="control-choosers">
                 <!--label for="session-chooser">Audio Session:</label-->
                 <select id="session-chooser">
-                    <option>1 - Khetta Short</option>
-                    <option>2 - Sikhara Short</option>
-                    <option>3 - Sikhara Long</option>
-                    <option>4 - Setu Long</option>
-                    <option>5 - Dubai Long [Hindi/Eng]</option>
-                    <option>6 - Juhu Mumbai Short</option>
-                    <option>7 - Salila Long</option>
-                    <option>8 - Salila Short</option>
-                    <option>9 - Day Ten Short</option>
-                    <option>10 - Khetta Short [Fr/Eng]</option>
-                    <option>11 - Khetta Minimal [Fr/Eng]</option>
+                    <option>1 - Khetta Short (1984) [edited for VGS]</option>
+                    <option>2 - Sikhara Short (1998) [edited for VGS]</option>
+                    <option>3 - Sikhara Long (1998)</option>
+                    <option>4 - Setu Long (2000) [edited for VGS]</option>
+                    <option>5 - Dubai Long (1999) [Hindi/Eng]</option>
+                    <option>6 - Juhu Mumbai Short (1987) [edited for VGS]</option>
+                    <option>7 - Salila Long (1998)</option>
+                    <option>8 - Salila Short (1998)</option>
+                    <option>9 – Giri Minimal Short (1985) [edited for VGS]</option>
+                    <option>10 - Khetta Short (1984) [Fr/Eng]</option>
+                    <option>11 - Giri Minimal Short (1985)  [Fr/Eng]</option>
+                    <option>12 - Dubai Long (1999) [edited for VGS]</option>
                 </select>
                 <!--label for="background-chooser">Background:</label-->
                 <select id="background-chooser">
@@ -229,8 +240,8 @@
                     <option>6 - Patapa Dhamma Hall</option>
                     <option>7 - Pubannanda Day</option>
                     <option>8 - Pubannanda Night</option>
-                    <option>9 - Pakasa Pond</option>
-                    <option>10 - Pakasa Gong</option>
+                    <!--<option>9 - Pakasa Pond</option>-->
+                    <option>9 - Pakasa Gong</option>
                 </select>
                 <select id="text-chooser">
                     <option>1 - Intro Text</option>
