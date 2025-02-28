@@ -47,10 +47,8 @@
 
 <?php
    function showMainNavigation() {
-      global $wp; 
-      global $post;
       echo "<ul>";
-      if ( is_os_page ( $wp ) ) {
+      if ( is_os_user() ) {
          $children = get_os_top_nav_items();
       } else {
          $children = get_ns_top_nav_items();
@@ -106,7 +104,6 @@
    }
 
    function showRelatedPages() {
-      global $exclude_pages;
       global $post;
       if ( is_page() ) {
          if ( isset($post) && is_object($post) ) _get_post_ancestors($post);   //workaround for occassional problems - JDH 7/29/2013 I Have no idea what this does
@@ -131,7 +128,7 @@
          global $wp; 
          $current_page_parent = ( $post->post_parent ? $post->post_parent : $post->ID );
          
-         if ( is_os_page( $wp ) ) {
+         if ( is_os_user() ) {
             $addon_page = get_addon_page ( 120, $current_page_parent );
          } else {
             $addon_page = get_addon_page ( 0, $current_page_parent );
