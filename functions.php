@@ -155,17 +155,11 @@ function show_os_menu($wp) {
     } else if (preg_match("|/category/|i", $current_url)) {
         // most post-categories are OS-only; but a few are also for new-students.  exclude these.
         // as of 2/28/25, there are NO /category/ menu items which allow NS access.  /category/ is only visible on the OS > News menu
-        // so this block always returns TRUE (show the OS menu)
-        $current_announcements_ID = 50;
-        $old_announcements_ID = 49;
-        $prefers_ns_categories = [$current_announcements_ID, $old_announcements_ID];
-        // JJD 8/18/23 #6 handle null object
-        $cat_ID = get_queried_object()->term_id ?? 'dummy';
-        return !in_array($cat_ID, $prefers_ns_categories);
+        return true; // categorized POST
     } else if (is_single()) {
         return true; // we're on a single POST which is not in /category/
     } else if (is_search()) {
-        return true; // we're searching.  I guess searching is only allowed for NS ??  FIX ME
+        return true; // we're searching.  I guess searching is only allowed for OS ??  FIX ME
     } else if (is_restricted()) {
         return true; // we're on a PAGE with page-restrictions
     }
