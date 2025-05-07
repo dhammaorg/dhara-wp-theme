@@ -29,7 +29,7 @@
             document.getElementById("audio-nine").style.display = "none";
             document.getElementById("audio-ten").style.display = "none";
             document.getElementById("audio-eleven").style.display = "none";
-            document.getElementById("audio-twelve").style.display = "none";
+            /*document.getElementById("audio-twelve").style.display = "none"; commentout by jch*/
             document.getElementById("audio-one").pause();
             document.getElementById("audio-two").pause();
             document.getElementById("audio-three").pause();
