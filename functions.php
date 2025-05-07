@@ -131,7 +131,7 @@ function dhamma_news_feed($atts) {
     $recent_posts = wp_get_recent_posts(['category' => $categoryID, 'post_status' => 'publish']);
     if (!empty($recent_posts)) {
         // JJD 8/18/23 #6 handle missing "name" attr; some pages have "title" attr instead of "name"
-        $name = $atts["name"] ?? ($atts["title"] ?? ''); 
+        $name = $atts["name"] ?? ($atts["title"] ?? '');
         $retMe .= "<h2>$name News</h2>";
         $retMe .= '<ul class="local-page-news-items">';
         foreach ($recent_posts as $recent) {
@@ -145,36 +145,32 @@ function dhamma_news_feed($atts) {
     return $retMe;
 }
 
-//Useful functions for checking if we're on an os-page or we want the os-menu, for use in other places in theme
-function prefers_os_menu($wp) {
+// should we show the OS menu ?
+// @param $wp WP Object
+// @return bool whether to show the OS menu
+function show_os_menu($wp) {
     $current_url = home_url(add_query_arg([], $wp->request));
     if (preg_match("|/os|i", $current_url)) {
-        return true;
+        return true; // we're on an OS-only page according to the URL
     } else if (preg_match("|/category/|i", $current_url)) {
-        $current_announcements_ID = 50;
-        $old_announcements_ID = 49;
-        $prefers_ns_categories = [$current_announcements_ID, $old_announcements_ID];
-        // JJD 8/18/23 #6 handle null object
-        $cat_ID = get_queried_object()->term_id ?? 'dummy';
-        return !in_array($cat_ID, $prefers_ns_categories);
+        // most post-categories are OS-only; but a few are also for new-students.  exclude these.
+        // as of 2/28/25, there are NO /category/ menu items which allow NS access.  /category/ is only visible on the OS > News menu
+        return true; // categorized POST
     } else if (is_single()) {
-        return true;
+        return true; // we're on a single POST which is not in /category/
     } else if (is_search()) {
-        return true;
+        return true; // we're searching.  I guess searching is only allowed for OS ??  FIX ME
     } else if (is_restricted()) {
-        return true;
+        return true; // we're on a PAGE with page-restrictions
     }
     return false;
 }
 
-/* Old students and webmasters should see only OS menu
-   todo: rename this function to is_os_user  */
-function is_os_page($wp) {
-    $is_os_page = false;
-    if (is_user_logged_in()) {
-        $is_os_page = true;
-    }
-    return $is_os_page;
+// is this person logged? this affects which menu they see
+// @return bool
+function is_os_user() {
+    $is_os_user = is_user_logged_in(); // in /wp-includes/pluggable.php
+    return $is_os_user;
 }
 
 // This function returns the destination URL after a logout as a string.
@@ -337,7 +333,7 @@ function show_404() {
     $pageID = get_the_ID();
     ?>
     <div id="page-<?php echo $pageID; ?>-content" class="page-content">
-        <?php 
+        <?php
         if (is_restricted()) {
             // JJD 4/17//24 remove hard-coded user ID; fix the logic to check page permissions
             if ('workers'==($dhamma_perms = get_post_meta($pageID, "dhamma_perms", true))) {
@@ -387,7 +383,7 @@ add_action( 'template_redirect', 'redirect_non_logged_users_to_os' );
 
 function redirect_non_logged_users_to_os() {
 	if ( !is_user_logged_in() && is_category('all-news' )) {
-		wp_redirect( '/os/' ); 
+		wp_redirect( '/os/' );
    		exit;
    }
 }
