@@ -6,104 +6,102 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/JavaScript">
             function toggleTextHide() {
-            if(document.getElementById("intro-text").style.display == "none") {
-            document.getElementById("intro-text").style.display = "block";
-            document.getElementById("toggle-text-button").innerHTML = "hide text";
-            document.getElementById("audio-controls").style.opacity = "1";
-            } else {
-            document.getElementById("intro-text").style.display = "none";
-            document.getElementById("toggle-text-button").innerHTML = "show text";
-            document.getElementById("audio-controls").style.opacity = ".5";
-            }
+				if( document.getElementById("intro-text").style.display == "none" ) {
+					document.getElementById("intro-text").style.display = "block";
+					document.getElementById("toggle-text-button").innerHTML = "hide text";
+					document.getElementById("audio-controls").style.opacity = "1";
+				} else {
+					document.getElementById("intro-text").style.display = "none";
+					document.getElementById("toggle-text-button").innerHTML = "show text";
+					document.getElementById("audio-controls").style.opacity = ".5";
+				}
             }
 
             function changeAudioPlayerTo(playerIndex) {
-                $audio_menu_elements = array(
-                  "audio-one", "audio-two", "audio-three", "audio-four", "audio-five", "audio-six",
-                  "audio-seven", "audio-eight", "audio-nine", "audio-ten", "audio-eleven", 
-                  "audio-twelve", "audio-13", "audio-14", "audio-15", "audio-16"
-                  );
-                $audio_id = $audio_menu_elements[ playerIndex ];
-                if( !empty($audio_id )) { // if not null
+                let audioMenuElements = [
+						"audio-one", "audio-two", "audio-three", "audio-four", "audio-five", "audio-six",
+						"audio-seven", "audio-eight", "audio-nine", "audio-ten", "audio-eleven", 
+						"audio-twelve", "audio-13", "audio-14", "audio-15", "audio-16" ],
+                	audioID = audioMenuElements[ playerIndex ];
+                	
+                if( audioID ) { // if a non-empty string
                     // de-select and stop previous recording
-                    foreach ($audio_menu_elements as $value) {
-                            document.getElementById($value).style.display = "none";
-                    }
-                    foreach ($audio_menu_elements as $value) {
-                            document.getElementById($value).pause();
-                    }
+                    audioMenuElements.forEach((el) => {
+						document.getElementById( el ).style.display = "none";
+						document.getElementById( el ).pause();
+                    });
                     // display new recording
-                    document.getElementById($audio_id).style.display = "block";
+                    document.getElementById( audioID ).style.display = "block";
                 }
             }
 
             function changeBackgroundTo(backgroundIndex) {
-            imageFileName = "1.png";
-            switch (backgroundIndex) {
-            case 0:
-            imageFileName = "1.png";
-            break;
-            case 1:
-            imageFileName = "2.jpg";
-            break;
-            case 2:
-            imageFileName = "3.jpg";
-            break;
-            case 3:
-            imageFileName = "4.jpg";
-            break;
-            case 4:
-            imageFileName = "5.jpg";
-            break;
-            case 5:
-            imageFileName = "6.jpg";
-            break;
-            case 6:
-            imageFileName = "7.jpg";
-            break;
-            case 7:
-            imageFileName = "8.jpg";
-            break;
-            /*case 8:
-            imageFileName = "9.jpg";
-            break;*/
-            case 8:
-            imageFileName = "10.jpg";
-            break;
-            }
-            document.getElementById( "vgs-body").style.backgroundImage = "url('/filebase/virtual-group-sittings/backgrounds/" + imageFileName + "')";
+				imageFileName = "1.png";
+				switch (backgroundIndex) {
+					case 0:
+						imageFileName = "1.png";
+						break;
+					case 1:
+						imageFileName = "2.jpg";
+						break;
+					case 2:
+						imageFileName = "3.jpg";
+						break;
+					case 3:
+						imageFileName = "4.jpg";
+						break;
+					case 4:
+						imageFileName = "5.jpg";
+						break;
+					case 5:
+						imageFileName = "6.jpg";
+						break;
+					case 6:
+						imageFileName = "7.jpg";
+						break;
+					case 7:
+						imageFileName = "8.jpg";
+						break;
+					/*case 8:
+						imageFileName = "9.jpg";
+						break;*/
+					case 8:
+						imageFileName = "10.jpg";
+						break;
+				}
+				document.getElementById( "vgs-body").style.backgroundImage = "url('/filebase/virtual-group-sittings/backgrounds/" + imageFileName + "')";
             }
 
             function changeTextTo(textIndex) {
-            switch (textIndex) {
-            case 0:
-            document.getElementById("vgs-welcome").style.display = "block";
-            document.getElementById("vgs-in-progress-instructions").style.display = "none";
-            document.getElementById("vgs-in-progress-silent").style.display = "none";
-            break;
-            case 1:
-            document.getElementById("vgs-welcome").style.display = "none";
-            document.getElementById("vgs-in-progress-instructions").style.display = "block";
-            document.getElementById("vgs-in-progress-silent").style.display = "none";
-            break;
-            case 2:
-            document.getElementById("vgs-welcome").style.display = "none";
-            document.getElementById("vgs-in-progress-instructions").style.display = "none";
-            document.getElementById("vgs-in-progress-silent").style.display = "block";
-            break;
-            }
+				switch (textIndex) {
+					case 0:
+						document.getElementById("vgs-welcome").style.display = "block";
+						document.getElementById("vgs-in-progress-instructions").style.display = "none";
+						document.getElementById("vgs-in-progress-silent").style.display = "none";
+						break;
+					case 1:
+						document.getElementById("vgs-welcome").style.display = "none";
+						document.getElementById("vgs-in-progress-instructions").style.display = "block";
+						document.getElementById("vgs-in-progress-silent").style.display = "none";
+						break;
+					case 2:
+						document.getElementById("vgs-welcome").style.display = "none";
+						document.getElementById("vgs-in-progress-instructions").style.display = "none";
+						document.getElementById("vgs-in-progress-silent").style.display = "block";
+						break;
+				}
             }
 
             window.onload = function() {
-            document.getElementById("session-chooser").onchange = function() {
-            changeAudioPlayerTo( this.selectedIndex );
-            }
-            document.getElementById("background-chooser").onchange = function() {
-            changeBackgroundTo( this.selectedIndex );
-            }
-            document.getElementById("text-chooser").onchange = function() {
-            changeTextTo( this.selectedIndex );
-            }
+				document.getElementById("session-chooser").onchange = function() {
+					changeAudioPlayerTo( this.selectedIndex );
+				}
+				document.getElementById("background-chooser").onchange = function() {
+					changeBackgroundTo( this.selectedIndex );
+				}
+				document.getElementById("text-chooser").onchange = function() {
+					changeTextTo( this.selectedIndex );
+				}
             }
         </script>
         <?php wp_head(); ?>
