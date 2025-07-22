@@ -93,14 +93,16 @@
             }
 
             window.onload = function() {
-				document.getElementById("session-chooser").onchange = function() {
-					changeAudioPlayerTo( this.selectedIndex );
-				}
-				document.getElementById("background-chooser").onchange = function() {
-					changeBackgroundTo( this.selectedIndex );
-				}
-				document.getElementById("text-chooser").onchange = function() {
-					changeTextTo( this.selectedIndex );
+            	if( document.getElementById("session-chooser")) { // exists only after login as 'dhammaworker'
+					document.getElementById("session-chooser").onchange = function() {
+						changeAudioPlayerTo( this.selectedIndex );
+					}
+					document.getElementById("background-chooser").onchange = function() {
+						changeBackgroundTo( this.selectedIndex );
+					}
+					document.getElementById("text-chooser").onchange = function() {
+						changeTextTo( this.selectedIndex );
+					}
 				}
             }
         </script>
