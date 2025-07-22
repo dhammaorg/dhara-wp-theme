@@ -162,10 +162,10 @@
                 <audio controls id="audio-eleven" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/ace0da45-e219-4ae4-b979-8af98828eb50.mp3" type="audio/mpeg">
                 </audio>
-                <--<audio controls id="audio-twelve" class="audio">
+                <audio controls id="audio-twelve" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/7abf8f8d-8ae7-4e1f-936c-9490af6e57d2.mp3" type="audio/mpeg">
                 </audio>
-                <--<audio controls id="audio-13" class="audio">
+                <audio controls id="audio-13" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/444ed631-cf1d-4417-9288-ebfab375da0a.mp3" type="audio/mpeg">
                 </audio>
                 <audio controls id="audio-14" class="audio">
