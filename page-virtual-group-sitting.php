@@ -21,7 +21,7 @@
                 let audioMenuElements = [
 						"audio-one", "audio-two", "audio-three", "audio-four", "audio-five", "audio-six",
 						"audio-seven", "audio-eight", "audio-nine", "audio-ten", "audio-eleven", 
-						"audio-twelve", "audio-13", "audio-14", "audio-15", "audio-16" ],
+						"audio-12", "audio-13", "audio-14", "audio-15" ],
                 	audioID = audioMenuElements[ playerIndex ];
                 	
                 if( audioID ) { // if a non-empty string
@@ -164,19 +164,16 @@
                 <audio controls id="audio-eleven" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/ace0da45-e219-4ae4-b979-8af98828eb50.mp3" type="audio/mpeg">
                 </audio>
-                <audio controls id="audio-twelve" class="audio">
-                    <source src="https://discourses.dhamma.org/oml/recordings/uuid/7abf8f8d-8ae7-4e1f-936c-9490af6e57d2.mp3" type="audio/mpeg">
-                </audio>
-                <audio controls id="audio-13" class="audio">
+                <audio controls id="audio-12" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/444ed631-cf1d-4417-9288-ebfab375da0a.mp3" type="audio/mpeg">
                 </audio>
-                <audio controls id="audio-14" class="audio">
+                <audio controls id="audio-13" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/f08e53e4-0dce-4e8e-930c-f20ce015b83e.mp3" type="audio/mpeg">
                 </audio>
-                <audio controls id="audio-15" class="audio">
+                <audio controls id="audio-14" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/0f8a9782-3e01-45b4-86f0-d32557606113.mp3" type="audio/mpeg">
                 </audio>
-                <audio controls id="audio-16" class="audio">
+                <audio controls id="audio-15" class="audio">
                     <source src="https://discourses.dhamma.org/oml/recordings/uuid/85da69ab-3d5a-4e48-b9b2-89d1dfc31077.mp3" type="audio/mpeg">
                 </audio>
             </div>
@@ -194,11 +191,10 @@
                     <option>9 – Dhamma Giri Minimal Short (1985) [edited for VGS]</option>
                     <option>10 - Dhamma Khetta Short (1984) [Fr/Eng]</option>
                     <option>11 - Dhamma Giri Minimal Short (1985)  [Fr/Eng]</option>
-                    <option>12 - Kushinagar Short (2001)</option>
-                    <option>13 - Jetavana Long (2001)</option>
-                    <option>14 - Isipatana Short (2001)</option>
-                    <option>15 - Dhamma Janani Short (2001)</option>
-                    <option>16 - Mahamuni Short (2000) [Burmese/Hindi/Eng]</option>
+                    <option>12 - Jetavana Long (2001)</option>
+                    <option>13 - Isipatana Short (2001)</option>
+                    <option>14 - Dhamma Janani Short (2001)</option>
+                    <option>15 - Mahamuni Short (2000) [Burmese/Hindi/Eng]</option>
                 </select>
                 <!--label for="background-chooser">Background:</label-->
                 <select id="background-chooser">
