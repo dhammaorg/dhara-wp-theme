@@ -165,7 +165,7 @@ if ( isset($_GET['login']) ) {
             <div id="mobile-login">
                 <?php if (! $userLoggedIn) { ?>
                     <div id="mobile-login-forgot-info">Please feel free to <a href="mailto:info@dhara.dhamma.org">email us</a> if you’re an old student and have forgotten the login information.</div>
-                            //added by JCH 9/24/25
+                            <?php //added by JCH 9/24/25 ?>
                             <?php if ( !empty($login_error) ) : ?>
                                  <div class="login-error" style="color:red; margin-bottom:8px;">
                                      <?php echo esc_html($login_error); ?>
