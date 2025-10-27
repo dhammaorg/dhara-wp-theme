@@ -1,3 +1,19 @@
+<?php
+//added by JCH 9/24/25
+global $login_error;
+
+if ( isset($_GET['login']) ) {
+    switch ($_GET['login']) {
+        case 'failed':
+            $login_error = __('Invalid username or password. Please try again.');
+            break;
+        case 'empty':
+            $login_error = __('Username and password cannot be empty.');
+            break;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -59,6 +75,13 @@
                         </div>
                     <?php } else { ?>
                         <div id="login-form-cell" class="logged-out">
+                            <?php //added by JCH 9/24/25 ?> 
+                            <?php if ( !empty($login_error) ) : ?>
+                                 <div class="login-error" style="color:red; margin-bottom:8px; font-size:16px;">
+                                     <?php echo esc_html($login_error); ?>
+                                 </div>
+                             <?php endif; ?>
+
                             <?php
                             $args = [
                                 'id_remember' => 'search-login-bar-remember-me',
@@ -142,6 +165,12 @@
             <div id="mobile-login">
                 <?php if (! $userLoggedIn) { ?>
                     <div id="mobile-login-forgot-info">Please feel free to <a href="mailto:info@dhara.dhamma.org">email us</a> if you’re an old student and have forgotten the login information.</div>
+                            <?php //added by JCH 9/24/25 ?>
+                            <?php if ( !empty($login_error) ) : ?>
+                                 <div class="login-error" style="color:red; margin-bottom:8px;">
+                                     <?php echo esc_html($login_error); ?>
+                                 </div>
+                             <?php endif; ?>
                     <?php
                     $args = [
                         'echo' => true,

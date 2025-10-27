@@ -387,3 +387,33 @@ function redirect_non_logged_users_to_os() {
    		exit;
    }
 }
+
+//added by JCH 9/24/25
+// Redirect failed login back to home (or whatever page shows your header login form)
+function my_frontend_login_fail( $username ) {
+    $referrer = wp_get_referer();
+    if ( $referrer && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
+        wp_redirect( add_query_arg( 'login', 'failed', $referrer ) );
+        exit;
+    }
+}
+add_action( 'wp_login_failed', 'my_frontend_login_fail' );
+
+//added by JCH 9/24/25
+// Handle empty fields
+function my_check_empty_login($user, $username, $password) {
+    if ( empty($username) || empty($password) ) {
+        wp_redirect( add_query_arg( 'login', 'empty', wp_get_referer() ) );
+        exit;
+    }
+    return $user;
+}
+add_filter( 'authenticate', 'my_check_empty_login', 30, 3 );
+
+//added by JCH 9/24/25
+// After logout, add query param
+function my_logout_redirect() {
+    wp_safe_redirect( add_query_arg( 'login', 'logout', home_url() ) );
+    exit;
+}
+add_action('wp_logout','my_logout_redirect');
