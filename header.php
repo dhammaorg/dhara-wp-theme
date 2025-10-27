@@ -77,7 +77,7 @@ if ( isset($_GET['login']) ) {
                         <div id="login-form-cell" class="logged-out">
                             <?php //added by JCH 9/24/25 ?> 
                             <?php if ( !empty($login_error) ) : ?>
-                                 <div class="login-error" style="color:red; margin-bottom:8px;">
+                                 <div class="login-error" style="color:red; margin-bottom:8px; font-size:16px;">
                                      <?php echo esc_html($login_error); ?>
                                  </div>
                              <?php endif; ?>
